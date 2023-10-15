@@ -2,7 +2,7 @@
   "name": "rn-logger",
   "version": "1.0.1",
   "description": "A Logger for react-native",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

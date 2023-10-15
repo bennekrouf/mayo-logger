@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
   },
 });
 
-
 class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
