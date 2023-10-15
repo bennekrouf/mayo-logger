@@ -1,0 +1,21 @@
+{
+  "name": "rn-logger",
+  "version": "1.0.0",
+  "description": "A Logger for react-native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mohamed Bennekrouf",
+  "license": "ISC",
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-native": "^0.72.6",
+    "@types/react-native": "^0.72.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bennekrouf/rn-logger.git"
+  }
+}
