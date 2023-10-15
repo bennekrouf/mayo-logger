@@ -1,5 +1,5 @@
 {
-  "name": "rn-logger",
+  "name": "rn-logging",
   "version": "1.0.1",
   "description": "A Logger for react-native",
   "main": "dist/index.js",
