@@ -1,6 +1,6 @@
 {
   "name": "rn-logging",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Logger for react-native",
   "main": "dist/index.js",
   "scripts": {
