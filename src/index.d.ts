@@ -1,4 +1,4 @@
-declare module 'your-logging-package-name' {
+declare module 'rn-logging' {
     // LogType and LogOptions
     type LogType = 'info' | 'warn' | 'error';
     
