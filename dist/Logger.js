@@ -1,9 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Logger = void 0;
+let defaultAppName = "APP"; // fallback default
+let defaultTimestamp = true; // default timestamp setting
 class Logger {
+    static configure(options) {
+        if (options.tag) {
+            defaultAppName = options.tag;
+        }
+        if (typeof options.timestamp === "boolean") {
+            defaultTimestamp = options.timestamp;
+        }
+    }
     static log(type, message, data, options) {
-        const defaultOptions = { tag: 'APP', timestamp: true };
+        const defaultOptions = {
+            tag: defaultAppName,
+            timestamp: defaultTimestamp
+        };
         const finalOptions = Object.assign(Object.assign({}, defaultOptions), options);
         const timestamp = finalOptions.timestamp ? new Date().toISOString() : '';
         const tag = finalOptions.tag ? `[${finalOptions.tag}]` : '';
