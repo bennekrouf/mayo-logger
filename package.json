@@ -1,6 +1,6 @@
 {
   "name": "mayo-logger",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A Logger for react-native",
   "main": "dist/index.js",
   "types": "src/index.d.ts",
