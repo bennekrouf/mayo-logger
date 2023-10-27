@@ -1,4 +1,4 @@
-declare module 'rn-logging' {
+declare module 'mayo-logger' {
     // LogType and LogOptions
     type LogType = 'info' | 'warn' | 'error';
     

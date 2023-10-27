@@ -13,7 +13,7 @@ This is a comprehensive logging solution for React Native applications. Not only
 
 ```bash
 
-yarn add rn-logging --save
+yarn add mayo-logger --save
 
 ```
 
@@ -22,7 +22,7 @@ yarn add rn-logging --save
 Before you start logging events, you can configure the logger to customize its default behavior.
 
 ```Javascript
-import { Logger } from 'rn-logging';
+import { Logger } from 'mayo-logger';
 
 Logger.configure({
     appName: "YourAppName", // Set your app's name used for the tags
@@ -40,7 +40,7 @@ Place the configuration code early in your application's lifecycle, preferably i
 
 ```javascript
 
-import { Logger } from 'rn-logging';
+import { Logger } from 'mayo-logger';
 
 Logger.info("This is an info log");
 Logger.warn("This is a warning", { details: "Additional data here" });
@@ -54,7 +54,7 @@ To catch and log errors from React components:
 
 ```javascript
 
-import { ErrorBoundary } from 'rn-logging';
+import { ErrorBoundary } from 'mayo-logger';
 
 function App() {
   return (
