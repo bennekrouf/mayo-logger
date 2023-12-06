@@ -1,6 +1,6 @@
 {
   "name": "mayo-logger",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "A Logger for react-native",
   "main": "dist/index.js",
   "types": "src/index.d.ts",
@@ -11,10 +11,12 @@
   "author": "Mohamed Bennekrouf",
   "license": "ISC",
   "devDependencies": {
-    "react": "^18.2.0",
-    "react-native": "^0.72.6",
     "@types/react-native": "^0.72.2",
     "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-native": ">=0.60.0"
   },
   "repository": {
     "type": "git",
