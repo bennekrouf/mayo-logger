@@ -22,7 +22,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const crashlytics_1 = __importDefault(require("@react-native-firebase/crashlytics"));
 const react_1 = __importStar(require("react"));
 const react_native_1 = require("react-native");
 const Logger_1 = require("./Logger");
@@ -46,7 +50,9 @@ class ErrorBoundary extends react_1.Component {
         return { hasError: true };
     }
     componentDidCatch(error, errorInfo) {
-        this.logErrorToMyService(error, errorInfo);
+        (0, crashlytics_1.default)().recordError(error); // Log the error to Crashlytics
+        // You can still use your custom logger as well
+        Logger_1.Logger.error("An error occurred: " + error.toString(), errorInfo);
     }
     logErrorToMyService(error, errorInfo) {
         Logger_1.Logger.error("An error occurred: " + error.toString(), errorInfo);

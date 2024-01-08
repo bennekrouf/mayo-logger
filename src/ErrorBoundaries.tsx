@@ -1,6 +1,8 @@
+import crashlytics from '@react-native-firebase/crashlytics';
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 import { Logger } from './Logger';
+
 
 interface State {
   hasError: boolean;
@@ -33,7 +35,9 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    this.logErrorToMyService(error, errorInfo);
+    crashlytics().recordError(error); // Log the error to Crashlytics
+    // You can still use your custom logger as well
+    Logger.error("An error occurred: " + error.toString(), errorInfo);
   }
 
   logErrorToMyService(error: Error, errorInfo: ErrorInfo) {
