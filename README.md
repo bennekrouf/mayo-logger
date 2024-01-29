@@ -1,6 +1,6 @@
 # Logging Library for React Native
 
-This is a comprehensive logging solution for React Native applications. Not only does it offer versatile logging functionalities, but it also includes an ErrorBoundary component to catch and log component-level errors in React.
+This is a comprehensive logging solution for React Native applications.
 
 ## Features
 
@@ -48,24 +48,6 @@ Logger.error("An error occurred!", new Error("Dummy error"));
 
 ```
 
-### ErrorBoundary
-
-To catch and log errors from React components:
-
-```javascript
-
-import { ErrorBoundary } from 'mayo-logger';
-
-function App() {
-  return (
-    <ErrorBoundary>
-      <YourComponent />
-    </ErrorBoundary>
-  );
-}
-```
-
-
 ## API
 
 ## Logger
@@ -74,11 +56,6 @@ function App() {
     Logger.info(message: string, data?: any, options?: LogOptions)
     Logger.warn(message: string, data?: any, options?: LogOptions)
     Logger.error(message: string, data?: any, options?: LogOptions)
-
-## ErrorBoundary
-
-A React component that uses the Logger to report component-level errors.
-
 
 ## Feedback & Contributions
 

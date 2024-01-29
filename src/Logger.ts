@@ -5,11 +5,17 @@ interface LogOptions {
   timestamp?: boolean;
 }
 
+const LOG_LEVELS: Record<LogType, number> = {
+  'info': 1,
+  'warn': 2,
+  'error': 3,
+};
+
 let defaultAppName = "APP"; // fallback default
 let defaultTimestamp = true; // default timestamp setting
 
 export class Logger {
-
+  static logLevel: LogType = 'info';
   static configure(options: LogOptions) {
     if (options.tag) {
         defaultAppName = options.tag;
@@ -17,6 +23,10 @@ export class Logger {
     if (typeof options.timestamp === "boolean") {
         defaultTimestamp = options.timestamp;
     }
+  }
+
+  static setLogLevel(logLevel: LogType) {
+    Logger.logLevel = logLevel;
   }
 
   static log(type: LogType, message: string, data?: any, options?: LogOptions) {
@@ -31,19 +41,21 @@ export class Logger {
     
     const logMessage = `${type.toUpperCase()} ${timestamp} ${tag} - ${message}`;
     
-    switch (type) {
-      case 'info':
-        console.info(logMessage, data);
-        break;
-      case 'warn':
-        console.warn(logMessage, data);
-        break;
-      case 'error':
-        console.error(logMessage, data);
-        break;
-      default:
-        console.log(logMessage, data);
-        break;
+    if (LOG_LEVELS[type] <= LOG_LEVELS[Logger.logLevel]) {
+      switch (type) {
+        case 'info':
+          console.info(logMessage, data);
+          break;
+          case 'warn':
+            console.warn(logMessage, data);
+            break;
+            case 'error':
+              console.error(logMessage, data);
+              break;
+              default:
+                console.log(logMessage, data);
+                break;
+        }
     }
   }
 

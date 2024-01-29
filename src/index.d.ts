@@ -15,20 +15,6 @@ declare module 'mayo-logger' {
       static error(message: string, data?: any, options?: LogOptions): void;
     }
   
-    // ErrorBoundary component
     import { Component, ErrorInfo, ReactNode } from 'react';
-  
-    interface ErrorBoundaryProps {
-      children: ReactNode;
-    }
-  
-    interface ErrorBoundaryState {
-      hasError: boolean;
-    }
-  
-    export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
-      static getDerivedStateFromError(_: Error): ErrorBoundaryState;
-      componentDidCatch(error: Error, errorInfo: ErrorInfo): void;
-    }
   }
   
