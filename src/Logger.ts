@@ -46,15 +46,15 @@ export class Logger {
         case 'info':
           console.info(logMessage, data);
           break;
-          case 'warn':
-            console.warn(logMessage, data);
-            break;
-            case 'error':
-              console.error(logMessage, data);
-              break;
-              default:
-                console.log(logMessage, data);
-                break;
+        case 'warn':
+          console.warn(logMessage, data);
+          break;
+        case 'error':
+          console.error(logMessage, data);
+          break;
+        default:
+          console.log(logMessage, data);
+          break;
         }
     }
   }
